@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const About = () => {
     return (
         <>
-            <p>funkar</p>
+            <p>om oss</p>
             <Link to='/'>tillbak</Link>
         </>
     );
