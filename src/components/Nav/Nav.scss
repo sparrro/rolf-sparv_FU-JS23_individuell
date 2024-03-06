@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .nav {
+    position: absolute;
+    top: 0%;
     padding: 1rem;
     background-color: black;
     height: 100%;
     width: 100%;
     img {
         margin-bottom: 9rem;
+        cursor: pointer;
     }
     hr {
         width: 48px;

@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
-import Landing from './pages/Landing'
+import Landing from './pages/Landing/Landing'
 import Menu from './pages/Menu'
 import About from './pages/About'
 import Cart from './pages/Cart'
@@ -11,14 +11,16 @@ import RootLayout from './RootLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    <>
+    <Route index element={<Landing />} />
     <Route path='/' element={<RootLayout />}>
-      <Route index element={<Landing />} />
       <Route path='/menu' element={<Menu />} />
       <Route path='/about' element={<About />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/status' element={<Status />} />
       <Route path='/profile' element={<Profile />} />
     </Route>
+    </>
   )
 )
 

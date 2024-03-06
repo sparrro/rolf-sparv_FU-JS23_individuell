@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.landing-page {
+    background-color: #38846D;
+    width: 375px;
+    max-height: 667px;
+    margin: auto;
+    position: relative;
+    img:nth-child(2) {
+        position: absolute;
+        right: 0%;
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 64px;
+    }
+    h1 {
+        color: white;
+        font-family: Rufina;
+        font-weight: 700;
+        font-size: 42px;
+    }
+    h2 {
+        color: white;
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+}
+
+.overlay {
+}
