@@ -8,10 +8,10 @@ import { useOverlayStore } from '../../store/overlay';
 
 const Landing = () => {
 
-    const {show, toggle} = useOverlayStore()
+    const {showNav, toggleNav} = useOverlayStore()
 
     return (
-        <div className="landing-page" onClick={toggle}>
+        <div className="landing-page" onClick={toggleNav}>
             <img src={leftFlowers} alt="" />
             <img src={rightFlowers} alt="" />
             <div className="logo">
@@ -19,7 +19,7 @@ const Landing = () => {
                 <h1>AIR BEAN</h1>
                 <h2>DRONEDELIVERED COFFEE</h2>
             </div>
-            {show ? <Nav /> : null}
+            {showNav && <Nav />}
         </div>
     )
 }

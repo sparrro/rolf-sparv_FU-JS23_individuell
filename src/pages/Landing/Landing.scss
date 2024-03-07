@@ -1,8 +1,12 @@
+@use '../../sass/abstracts/' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
 .landing-page {
-    background-color: #38846D;
-    width: 375px;
+    background-color: $airbeanDarkGreen;
+    width: $airBeanMinWidth;
     max-height: 667px;
     margin: auto;
     position: relative;
@@ -36,7 +40,4 @@
         font-size: 9px;
         letter-spacing: 2.5px;
     }
-}
-
-.overlay {
 }

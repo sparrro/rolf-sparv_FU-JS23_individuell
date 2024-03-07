@@ -1,0 +1,62 @@
+@use '../../sass/abstracts/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.about-page {
+    position: relative;
+    background-color: $airbeanPink;
+    width: $airBeanMinWidth;
+    margin: auto;
+    background-image: url('../../assets/footer.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    main {
+        width: 311px;
+        margin: auto;
+        padding-bottom: 8rem;
+        h1 {
+            font-family: 'PT Serif';
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 50.4px;
+            color: $airbeanBrown;
+            margin-top: 2rem;
+        }
+        p {
+            font-family: 'Work Sans';
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 19.2px;
+            color: $airbeanBrown;
+            margin-top: 1rem;
+        }
+        p:nth-child(2) {
+            font-weight: 600;
+        }
+    }
+}
+
+.eva {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 74px;
+    }
+    h2 {
+        font-family: 'PT Serif';
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 35.2px;
+        color: $airbeanBrown;
+    }
+    h3 {
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 19.2px;
+        color: $airbeanBrown;
+    }
+}
