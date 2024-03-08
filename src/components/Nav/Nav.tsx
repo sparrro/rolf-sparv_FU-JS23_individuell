@@ -5,20 +5,21 @@ import { useOverlayStore } from "../../store/overlay";
 
 
 
+
 const Nav = () => {
 
-    const {showNav, toggleNav} = useOverlayStore()
+    const {toggleNav} = useOverlayStore()
 
     return (
         <nav className="nav" onClick={(e) => e.stopPropagation()}>
             <img src={close} alt="" onClick={toggleNav} />
-            <Link to="/menu"><h2>Meny</h2></Link>
+            <Link to="/menu"><h2 onClick={toggleNav}>Meny</h2></Link>
             <hr />
             <Link to="/about"><h2 onClick={toggleNav}>Vårt kaffe</h2></Link>
             <hr />
-            <Link to="/profile"><h2>Min profil</h2></Link>
+            <Link to="/profile"><h2 onClick={toggleNav}>Min profil</h2></Link>
             <hr />
-            <Link to="/status"><h2>Orderstatus</h2></Link>
+            <Link to="/status"><h2 onClick={toggleNav}>Orderstatus</h2></Link>
         </nav>
     );
 }

@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
+import menu from "../../api/api";
+import Header from "../../components/Header/Header";
+
+
+
+
+
 
 const Menu = () => {
     return (
-        <>
-        <p>meny</p>
-        <Link to='/'>tillbak</Link></>
+        <div className="menu-page">
+            <Header />
+            {menu.map((item: any, index: number) => (
+                    <div key={index}>
+                        <h2>{item.title}</h2>
+                        <p>{item.desc}</p>
+                        <p>{item.price}</p>
+                    </div>
+                )
+            )}
+            <p>meny</p>
+        </div>
+
     );
 }
  
