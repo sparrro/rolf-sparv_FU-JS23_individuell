@@ -1,0 +1,10 @@
+@use '../../sass/abstracts/' as *;
+
+.menu-page {
+    width: $airBeanMinWidth;
+    margin: auto;
+    background-color: $airbeanPink;
+    background-image: url('../../assets/footer.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
