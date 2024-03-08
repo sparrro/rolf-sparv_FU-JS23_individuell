@@ -1,6 +1,7 @@
 @use '../../sass/abstracts/' as *;
 
 .menu-page {
+    position: relative;
     width: $airBeanMinWidth;
     margin: auto;
     background-color: $airbeanPink;

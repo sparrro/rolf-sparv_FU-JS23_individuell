@@ -4,12 +4,15 @@ import menu from "../../api/api";
 import Header from "../../components/Header/Header";
 
 import { useCartStore } from '../../store/cart';
+import { useOverlayStore } from '../../store/overlay';
+import Nav from '../../components/Nav/Nav';
 
 
 
 
 const Menu = () => {
 
+    const {showNav} = useOverlayStore()
     const {incrementCart} = useCartStore()
 
     return (
@@ -23,7 +26,7 @@ const Menu = () => {
                     </div>
                 )
             )}
-            <p>meny</p>
+            {showNav && <Nav />}
         </div>
 
     );
