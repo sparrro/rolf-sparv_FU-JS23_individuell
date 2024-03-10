@@ -3,29 +3,37 @@ import './Menu.scss';
 import menu from "../../api/api";
 import Header from "../../components/Header/Header";
 
-import { useCartStore } from '../../store/cart';
 import { useOverlayStore } from '../../store/overlay';
 import Nav from '../../components/Nav/Nav';
+import MenuItem from '../../components/MenuItem/MenuItem';
+import CoffeType from '../../interfaces/CoffeeType';
 
+
+
+console.log(menu)
 
 
 
 const Menu = () => {
 
     const {showNav} = useOverlayStore()
-    const {incrementCart} = useCartStore()
+
+    let coffees = menu.filter((item: CoffeType) => {
+        return item.id.charAt(0) == 'c'
+    })
+
+    let menuItems = menu.map((item: CoffeType, index: number) => (
+            <MenuItem item={item} index={index}/>
+        )
+    )
 
     return (
         <div className="menu-page">
             <Header showCart={true} />
-            {menu.map((item: any, index: number) => (
-                    <div key={index} onClick={incrementCart}>
-                        <h2>{item.title}</h2>
-                        <p>{item.desc}</p>
-                        <p>{item.price}</p>
-                    </div>
-                )
-            )}
+            <main>
+                <h1>Meny</h1>
+                {menuItems}
+            </main>
             {showNav && <Nav />}
         </div>
 

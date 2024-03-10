@@ -6,11 +6,11 @@ import { useOverlayStore } from "../../store/overlay";
 
 const About = () => {
 
-    const {showNav, toggleNav} = useOverlayStore()
+    const {showNav} = useOverlayStore()
 
     return (
         <div className="about-page">
-            <Header />
+            <Header showCart={false} />
             <main>   
                 <h1>Vårt Kaffe</h1>
                 <p>Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.</p>

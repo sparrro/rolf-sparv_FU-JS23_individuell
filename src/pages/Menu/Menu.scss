@@ -4,8 +4,17 @@
     position: relative;
     width: $airBeanMinWidth;
     margin: auto;
+    padding-bottom: 10rem;
     background-color: $airbeanPink;
     background-image: url('../../assets/footer.png');
     background-repeat: no-repeat;
     background-position: bottom;
+    main {
+        h1 {
+            text-align: center;
+            margin: 1rem;
+        }
+        width: 311px;
+        margin: auto;
+    }
 }
