@@ -22,8 +22,8 @@ const Menu = () => {
         return item.id.charAt(0) == 'c'
     })
 
-    let menuItems = menu.map((item: CoffeType, index: number) => (
-            <MenuItem item={item} index={index}/>
+    let menuItems = menu.map((item: CoffeType, index: string) => (
+            <MenuItem item={item} key={index.toString()}/>
         )
     )
 
