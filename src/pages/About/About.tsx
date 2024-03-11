@@ -10,7 +10,7 @@ const About = () => {
 
     return (
         <div className="about-page">
-            <Header showCart={false} />
+            <Header showCartIcon={false} />
             <main>   
                 <h1>Vårt Kaffe</h1>
                 <p>Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.</p>

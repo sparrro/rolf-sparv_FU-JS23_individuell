@@ -3,18 +3,22 @@
 .menu-page {
     position: relative;
     width: $airBeanMinWidth;
+    background-color: $airbeanBrown;
     margin: auto;
-    padding-bottom: 10rem;
-    background-color: $airbeanPink;
-    background-image: url('../../assets/footer.png');
-    background-repeat: no-repeat;
-    background-position: bottom;
     main {
         h1 {
             text-align: center;
-            margin: 1rem;
+            padding: 1rem;
         }
-        width: 311px;
         margin: auto;
+        background-color: $airbeanPink;
+        background-image: url('../../assets/footer.png');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding-bottom: 8rem;
     }
+}
+
+.overlay-shadow {
+    opacity: 0.5;
 }

@@ -5,11 +5,11 @@ import dots from './../../assets/dots.png';
 
 const MenuItem = ({item}: {item: CoffeType}) => {
 
-    const {incrementCart} = useCartStore()
+    const {cart, addToCart} = useCartStore()
 
     return (
         <article className="menu-item" >
-            <div className="add" onClick={incrementCart}>+</div>
+            <div className="add" onClick={() => addToCart(item)}>+</div>
             <h2>{item.title}</h2>
             <p>{item.price} kr</p>
             <p>{item.desc}</p>

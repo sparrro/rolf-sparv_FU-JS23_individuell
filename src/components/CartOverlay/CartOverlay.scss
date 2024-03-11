@@ -1,0 +1,29 @@
+@use '../../sass/abstracts/' as *;
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.cart-overlay {
+    position: absolute;
+    top: 0;
+    width: 341px;
+    border-radius: 3px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 4.5rem;
+    background-color: white;
+}
+
+.nub {
+    width: 20px;
+    height: 20px;
+    border-radius: 1px;
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: -4px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+.menu-page>.cart-icon {
+    top: 1rem;
+    right: 1rem;
+}

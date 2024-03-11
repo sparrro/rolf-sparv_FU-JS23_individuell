@@ -1,22 +1,23 @@
 import './Header.scss';
 import hamberder from '../../assets/navicon.png';
-import bag from '../../assets/bag.png';
 import { useOverlayStore } from '../../store/overlay';
-import { useCartStore } from '../../store/cart';
+import { useNavigate } from 'react-router-dom';
+import CartIcon from '../CartIcon/CartIcon';
 
-const Header = ({showCart}: {showCart: boolean}) => {
+const Header = ({showCartIcon, className}: {showCartIcon: boolean, className?: string}) => {
 
     const {toggleNav} = useOverlayStore()
-    const {cart} = useCartStore()
+    const navigate = useNavigate()
+
+    const openCart = () => {
+        navigate('/cart')
+    }
 
     return (
-        <header>
+        <header className={className}>
             <img src={hamberder} alt="" onClick={toggleNav}/>
-            {showCart && 
-            <div className='cart-icon'>
-                <img src={bag} alt="" />
-                {cart.length>0 && <p>{cart.length}</p>}
-            </div>
+            {showCartIcon && 
+                <CartIcon/>
             }
         </header>
     );
