@@ -1,12 +1,19 @@
 import CartIcon from '../CartIcon/CartIcon';
 import dots from '../../assets/dots.png'
-import menu from '../../api/api'
+import { menu } from '../../api/api';
 import { useCartStore } from '../../store/cart';
 import './CartOverlay.scss'
+import CartItem from '../CartItem/CartItem';
 
 const CartOverlay = () => {
 
-    const {cart} = useCartStore()
+    const {cart, calcSum} = useCartStore()
+
+    let cartItems = cart.map((item, index) => (
+        <CartItem item={item} key={index} />
+    ))
+
+    let sum = calcSum()
 
     return (
         <>
@@ -15,11 +22,13 @@ const CartOverlay = () => {
             <div className="nub"></div>
             <h2>Din beställning</h2>
             <ul>
-                <li>
-                    <h3>{cart[1].title}</h3>
-                    <p>{cart[1].price} kr</p>
-                </li>
+                {cartItems.length>0 ? cartItems : 'Här var det tomt!'}
             </ul>
+            <div className="total-sum">
+                <h3>Total<span>{sum} kr</span></h3>
+                <p>inkl moms + drönarleverans</p>
+            </div>
+            <button type='button'>Take my money!</button>
         </div>
         </>
     );

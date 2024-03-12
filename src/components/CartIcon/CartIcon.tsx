@@ -10,11 +10,15 @@ const CartIcon = () => {
     const {cart} = useCartStore()
     const {toggleCartOverlay} = useCartOverlayStore()
 
+    let cartSize = 0
+    for (let item of cart) {
+        cartSize += item.quantity!
+    }
 
     return (
         <div className='cart-icon' onClick={toggleCartOverlay}>
             <img src={bag} alt="" />
-            {cart.length>0 && <p>{cart.length}</p>}
+            {cartSize>0 && <p>{cartSize}</p>}
         </div>
     );
 }

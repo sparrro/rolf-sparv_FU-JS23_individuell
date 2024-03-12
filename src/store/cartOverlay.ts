@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 interface CartOverlayState {
     showCartOverlay: boolean;
-    toggleCartOverlay: () => void
+    toggleCartOverlay: () => void;
 }
 
 export const useCartOverlayStore = create<CartOverlayState>()((set) => ({

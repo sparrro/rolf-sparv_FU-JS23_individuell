@@ -1,4 +1,4 @@
-
+import CoffeType from "../interfaces/CoffeeType"
 
 const base_URL = 'https://airbean-api-xjlcn.ondigitalocean.app'
 
@@ -8,6 +8,4 @@ const getMenu = async () => {
     return menu.menu
 }
 
-const menu = await getMenu()
-
-export default menu
+export const menu: CoffeType[] = await getMenu()

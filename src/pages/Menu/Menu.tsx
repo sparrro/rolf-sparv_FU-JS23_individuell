@@ -1,6 +1,6 @@
 import './Menu.scss';
 
-import menu from "../../api/api";
+import { menu } from '../../api/api';
 import Header from "../../components/Header/Header";
 import { useOverlayStore } from '../../store/overlay';
 import { useCartOverlayStore } from '../../store/cartOverlay';
@@ -24,8 +24,8 @@ const Menu = () => {
 
 
 
-    let menuItems = menu.map((item: CoffeType, index: string) => (
-            <MenuItem item={item} key={index.toString()}/>
+    let menuItems = menu.map((item, index) => (
+            <MenuItem item={item} key={index}/>
         )
     )
 

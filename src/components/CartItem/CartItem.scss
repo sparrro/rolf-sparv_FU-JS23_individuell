@@ -1,0 +1,49 @@
+@use '../../sass/abstracts/' as *;
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.cart-item {
+    list-style: none;
+    width: 311px;
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    grid-template-rows: repeat(3, 1rem);
+    background-image: url('../../assets/dots.png'), url('../../assets/dots.png');
+    background-repeat: no-repeat;
+    background-position-x: 3.5rem, 9rem;
+    background-position-y: 1.5rem;
+    margin-top: 1rem;
+    h3 {
+        grid-row: 1 / span 2;
+        font-family: 'PT Serif';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: $airbeanBrown;
+        margin-top: 5px;
+    }
+    p:nth-child(2) {
+        grid-row: 3;
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15.6px;
+        color: $airbeanBrown;
+    }
+    img:nth-child(3) {
+        margin: auto;
+        cursor: pointer;
+    }
+    p:nth-child(4) {
+        font-family: 'Work Sans';
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18.2px;
+        color: $airbeanBrown;
+        text-align: center;
+    }
+    img:nth-child(5) {
+        margin: auto;
+        cursor: pointer;
+    }
+}
