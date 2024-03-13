@@ -1,0 +1,63 @@
+@use '../../sass/abstracts/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.status-page {
+    min-height: 667px;
+    width: $airBeanMinWidth;
+    background-color: $airbeanOrange;
+    margin: auto;
+    padding: 2.5rem;
+    p:nth-child(1) {
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+        text-align: center;
+        color: rgba($color: white, $alpha: 0.7);
+        margin-top: 1rem;
+        >span {
+            font-weight: 700;
+        }
+    }
+    img {
+        display: block;
+        margin: 3rem auto;
+    }
+    h1 {
+        font-family: 'PT Serif';
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43.2px;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+    }
+    p:nth-child(4) {
+        font-family: 'Work Sans';
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 25.2px;
+        text-align: center;
+        color: white;
+        >span {
+            font-size: 22px;
+            line-height: 26.4px;
+            font-weight: 700;
+        }
+    }
+    button {
+        border: unset;
+        display: block;
+        margin: 4rem auto;
+        width: 184px;
+        height: 55px;
+        border-radius: 50px;
+        background-color: white;
+        font-family: 'PT Serif';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28.8px;
+        color: $airbeanBrown;
+        cursor: pointer;
+    }
+}

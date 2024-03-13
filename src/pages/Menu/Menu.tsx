@@ -2,8 +2,8 @@ import './Menu.scss';
 
 import { menu } from '../../api/api';
 import Header from "../../components/Header/Header";
-import { useOverlayStore } from '../../store/overlay';
 import { useCartOverlayStore } from '../../store/cartOverlay';
+import { useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import MenuItem from '../../components/MenuItem/MenuItem';
 import CoffeType from '../../interfaces/CoffeeType';
@@ -17,8 +17,8 @@ console.log(menu)
 
 const Menu = () => {
 
-    const {showNav} = useOverlayStore()
     const {showCartOverlay} = useCartOverlayStore()
+    const [showNav, setShowNav] = useState(false)
 
 
 
@@ -31,13 +31,13 @@ const Menu = () => {
 
     return (
         <div className="menu-page">
-            <Header showCartIcon={true} className={showCartOverlay ? 'overlay-shadow' : ''}/>
+            <Header showCartIcon={true} navToggler={() => setShowNav(!showNav)} className={showCartOverlay ? 'overlay-shadow' : ''}/>
             <main className={showCartOverlay ? 'overlay-shadow' : ''}>
                 <h1>Meny</h1>
                 {menuItems}
             </main>
             {showCartOverlay && <CartOverlay />}
-            {showNav && <Nav />}
+            {showNav && <Nav navToggler={() => setShowNav(!showNav)} />}
         </div>
 
     );

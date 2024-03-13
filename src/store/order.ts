@@ -30,5 +30,5 @@ export const useOrderStore = create<OrderState>()((set) => ({
     },
     resetOrders: () => set({orders: []}),
     sentOrder: null,
-    updateSentOrder: (order) => set({sentOrder: order}) // vägrar funka !?!??!?!?!?
+    updateSentOrder: (order) => set({sentOrder: order})
 }))

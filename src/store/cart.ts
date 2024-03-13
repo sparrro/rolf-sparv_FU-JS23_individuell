@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useOrderStore } from "./order";
 import CoffeType from "../interfaces/CoffeeType";
 import OrderType from "../interfaces/OrderType";
 
@@ -33,7 +34,5 @@ export const useCartStore = create<CartState>()((set) => ({
             }
             return {cart: newCart}
         })
-    },
-    
-    
+    }
 }))

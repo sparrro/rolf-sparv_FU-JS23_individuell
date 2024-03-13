@@ -1,4 +1,6 @@
 @use '../../sass/abstracts/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 .menu-page {
     position: relative;
@@ -7,6 +9,11 @@
     margin: auto;
     main {
         h1 {
+            font-family: 'PT Serif';
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 50.4px;
+            color: $airbeanBrown;
             text-align: center;
             padding: 1rem;
         }

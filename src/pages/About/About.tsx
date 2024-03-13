@@ -2,17 +2,17 @@ import './About.scss';
 import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
 import eva from '../../assets/Eva.png'
-import { useOverlayStore } from "../../store/overlay";
+import { useState } from 'react';
 
 const About = () => {
 
-    const {showNav} = useOverlayStore()
+    const [showNav, setShowNav] = useState(false)
 
     
 
     return (
         <div className="about-page">
-            <Header showCartIcon={false} />
+            <Header showCartIcon={false} navToggler={() => setShowNav(!showNav)} />
             <main>   
                 <h1>Vårt Kaffe</h1>
                 <p>Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.</p>
@@ -24,7 +24,7 @@ const About = () => {
                     <h3>VD & Grundare</h3>
                 </div>
             </main>
-            {showNav && <Nav />}
+            {showNav && <Nav navToggler={() => setShowNav(!showNav)}/>}
         </div>
     );
 }

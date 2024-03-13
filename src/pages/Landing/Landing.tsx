@@ -3,17 +3,17 @@ import leftFlowers from './../../assets/landing_left_flowers.png';
 import rightFlowers from './../../assets/landing_right_flowers.png';
 import Nav from "../../components/Nav/Nav";
 import logo from './../../assets/logo.png';
-import { useOverlayStore } from '../../store/overlay';
+import { useState } from 'react';
 
 
 
 
 const Landing = () => {
 
-    const {showNav, toggleNav} = useOverlayStore()
+    const [showNav, setShowNav] = useState(false)
 
     return (
-        <div className="landing-page" onClick={toggleNav}>
+        <div className="landing-page" onClick={() => setShowNav(!showNav)}>
             <img src={leftFlowers} alt="" />
             <img src={rightFlowers} alt="" />
             <div className="logo">
@@ -21,7 +21,7 @@ const Landing = () => {
                 <h1>AIR BEAN</h1>
                 <h2>DRONEDELIVERED COFFEE</h2>
             </div>
-            {showNav && <Nav />}
+            {showNav && <Nav navToggler={() => setShowNav(!showNav)} />}
         </div>
     )
 }

@@ -5,12 +5,15 @@ import './CartOverlay.scss'
 import CartItem from '../CartItem/CartItem';
 import { sendOrder } from '../../api/api';
 import { useNavigate } from 'react-router-dom';
-import OrderResponseType from '../../interfaces/OrderResponseType';
+import { useState } from 'react';
+import { useCartOverlayStore } from '../../store/cartOverlay';
 
 const CartOverlay = () => {
 
     const {cart} = useCartStore()
-    let {orders, compileOrders, resetOrders, sentOrder, updateSentOrder} = useOrderStore()
+    const {orders, compileOrders, resetOrders, updateSentOrder} = useOrderStore()
+    const {toggleCartOverlay} = useCartOverlayStore()
+    const [emptyCartP, setEmptyCartP] = useState('Här var det tomt!')
     const navigate = useNavigate()
 
     let cartItems = cart.map((item, index) => (
@@ -19,7 +22,7 @@ const CartOverlay = () => {
 
     const calcSum = () => {
         let sum = 0
-        for (let item of useCartStore.getState().cart) {
+        for (let item of cart) {
             sum += item.quantity! * item.price
         }
         return sum
@@ -27,13 +30,26 @@ const CartOverlay = () => {
 
     let sum = calcSum()
 
-    let test = async () => {
+    const emptyCartPs = [
+        'Här var det tomt!',
+        'Glöm inte kaffet!',
+        'Du har inget kaffe i vagnen!',
+        'Men vad vill du ha?',
+        'Det finns inget att beställa!'
+    ]
+
+    let handleOrder = () => {
         compileOrders();
-        console.log(sentOrder, typeof sentOrder)
-        sendOrder(orders).then(res => {updateSentOrder(res as OrderResponseType), console.log(sentOrder)}) //jävla satan
-        console.log(sentOrder, typeof sentOrder)
-        //navigate('/status')
-        //resetOrders()
+        console.log(orders)
+        if (orders.length>0) {
+            sendOrder(orders).then(res => {updateSentOrder(res)})
+            toggleCartOverlay()
+            navigate('/status')
+        } else {
+            setEmptyCartP(emptyCartPs[Math.floor(Math.random() * emptyCartPs.length)])
+        }
+        resetOrders()
+
     }
 
 
@@ -44,13 +60,13 @@ const CartOverlay = () => {
             <div className="nub"></div>
             <h2>Din beställning</h2>
             <ul>
-                {cartItems.length>0 ? cartItems : 'Här var det tomt!'}
+                {cartItems.length>0 ? cartItems : <p>{emptyCartP}</p>}
             </ul>
             <div className="total-sum">
                 <h3>Total<span>{sum} kr</span></h3>
                 <p>inkl moms + drönarleverans</p>
             </div>
-            <button type='button' onClick={test}>Take my money!</button>
+            <button type='button' onClick={handleOrder}>Take my money!</button>
         </div>
         </>
     );
