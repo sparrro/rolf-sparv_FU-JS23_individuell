@@ -6,12 +6,12 @@ import dots from './../../assets/dots.png';
 
 const MenuItem = ({item}: {item: CoffeType}) => {
 
-    const {cart, addToCart, calcSum} = useCartStore()
+    const {addToCart} = useCartStore()
     const {showCartOverlay} = useCartOverlayStore()
 
     return (
         <article className="menu-item" >
-            <div className="add" onClick={() => {if (!showCartOverlay) {addToCart(item)}; calcSum()}}>+</div>
+            <div className="add" onClick={() => {if (!showCartOverlay) {addToCart(item)}}}>+</div>
             <h2>{item.title}</h2>
             <p>{item.price} kr</p>
             <p>{item.desc}</p>

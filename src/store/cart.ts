@@ -1,17 +1,15 @@
 import { create } from "zustand";
 import CoffeType from "../interfaces/CoffeeType";
+import OrderType from "../interfaces/OrderType";
 
 interface CartState {
     cart: CoffeType[];
-    //incrementCart: () => void
     addToCart: (coffee: CoffeType) => void;
     removeFromCart: (coffee: CoffeType) => void;
-    calcSum: () => number;
 }
 
 export const useCartStore = create<CartState>()((set) => ({
     cart: [],
-    //incrementCart: () => set((state) => ({cart: [...state.cart, {product: 'dummy'}]})),
     addToCart: (coffee) => {
         set((state) => {
             let newCart = state.cart
@@ -36,12 +34,6 @@ export const useCartStore = create<CartState>()((set) => ({
             return {cart: newCart}
         })
     },
-    calcSum: () => {
-
-        let sum = 0
-        for (let item of useCartStore.getState().cart) {
-            sum += item.quantity!*item.price
-        }
-        return sum
-    }
+    
+    
 }))

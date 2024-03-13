@@ -8,6 +8,8 @@ const About = () => {
 
     const {showNav} = useOverlayStore()
 
+    
+
     return (
         <div className="about-page">
             <Header showCartIcon={false} />
