@@ -1,13 +1,12 @@
 import './CartItem.scss';
-import CoffeType from "../../interfaces/CoffeeType";
 import more from './../../assets/more.png';
 import less from './../../assets/less.png';
 import { useCartStore } from '../../store/cart';
+import CoffeType from "../../interfaces/CoffeeType";
 
 const CartItem = ({item}: {item: CoffeType}) => {
 
-    const {addToCart, removeFromCart} = useCartStore()
-
+    const {addToCart, removeFromCart} = useCartStore();
 
     return (
         <li className="cart-item">

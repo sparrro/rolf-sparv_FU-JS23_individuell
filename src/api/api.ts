@@ -1,5 +1,6 @@
 import CoffeType from "../interfaces/CoffeeType"
 import OrderType from "../interfaces/OrderType"
+import OrderResponseType from "../interfaces/OrderResponseType"
 
 const base_URL = 'https://airbean-api-xjlcn.ondigitalocean.app'
 
@@ -24,4 +25,10 @@ export const sendOrder = async (orders: OrderType[]) => {
     })
     let order = await data.json()
     return order
+}
+
+export const getOrderStatus = async (order: OrderResponseType) => {
+    let data: Response = await fetch(`${base_URL}/api/beans/order/status/${order.orderNr}`)
+    let orderStatus = await data.json()
+    return orderStatus
 }

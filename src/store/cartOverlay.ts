@@ -8,4 +8,4 @@ interface CartOverlayState {
 export const useCartOverlayStore = create<CartOverlayState>()((set) => ({
     showCartOverlay: false,
     toggleCartOverlay: () => set((state) => ({showCartOverlay: !state.showCartOverlay}))
-}))
+}));

@@ -1,10 +1,9 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import './App.css'
-import Landing from './pages/Landing/Landing'
-import Menu from './pages/Menu/Menu'
-import About from './pages/About/About'
-import Status from './pages/Status/Status'
-
+import './App.css';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import Landing from './pages/Landing/Landing';
+import Menu from './pages/Menu/Menu';
+import About from './pages/About/About';
+import Status from './pages/Status/Status';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +15,6 @@ const router = createBrowserRouter(
     </>
   )
 )
-
 
 function App() {
 

@@ -1,13 +1,13 @@
+import './MenuItem.scss';
+import CoffeType from "../../interfaces/CoffeeType";
+import dots from './../../assets/dots.png';
 import { useCartStore } from "../../store/cart";
 import { useCartOverlayStore } from "../../store/cartOverlay";
-import CoffeType from "../../interfaces/CoffeeType";
-import './MenuItem.scss'
-import dots from './../../assets/dots.png';
 
 const MenuItem = ({item}: {item: CoffeType}) => {
 
-    const {addToCart} = useCartStore()
-    const {showCartOverlay} = useCartOverlayStore()
+    const {addToCart} = useCartStore();
+    const {showCartOverlay} = useCartOverlayStore();
 
     return (
         <article className="menu-item" >

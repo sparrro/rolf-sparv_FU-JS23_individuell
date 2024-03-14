@@ -1,14 +1,12 @@
 import './About.scss';
+import eva from '../../assets/Eva.png';
 import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
-import eva from '../../assets/Eva.png'
 import { useState } from 'react';
 
 const About = () => {
 
-    const [showNav, setShowNav] = useState(false)
-
-    
+    const [showNav, setShowNav] = useState(false);
 
     return (
         <div className="about-page">

@@ -3,7 +3,7 @@ interface CoffeType {
     id: string;
     price: number;
     title: string;
-    quantity?: number 
+    quantity?: number;
 }
 
 export default CoffeType

@@ -1,8 +1,8 @@
 import './Landing.scss';
 import leftFlowers from './../../assets/landing_left_flowers.png';
 import rightFlowers from './../../assets/landing_right_flowers.png';
-import Nav from "../../components/Nav/Nav";
 import logo from './../../assets/logo.png';
+import Nav from "../../components/Nav/Nav";
 import { useState } from 'react';
 
 
@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const Landing = () => {
 
-    const [showNav, setShowNav] = useState(false)
+    const [showNav, setShowNav] = useState(false);
 
     return (
         <div className="landing-page" onClick={() => setShowNav(!showNav)}>

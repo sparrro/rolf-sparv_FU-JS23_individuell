@@ -1,29 +1,26 @@
-import './Status.scss'
-import { Link } from "react-router-dom";
-import { useOrderStore } from "../../store/order";
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import './Status.scss';
 import bigLogo from '../../assets/big_logo.png';
+import { useNavigate } from 'react-router-dom';
+import { useOrderStore } from "../../store/order";
 
 const Status = () => {
 
-    const {sentOrder} = useOrderStore()
-    const [showNav, setShowNav] = useState(false)
-    const navigate = useNavigate()
+    const {sentOrder, orderStatus} = useOrderStore();
+    const navigate = useNavigate();
 
     return (
         <div className="status-page">
-            {sentOrder ?
+            {(sentOrder && orderStatus?.eta) ?
             <>
                 <p>Ordernummer <span>#{sentOrder.orderNr}</span></p>
                 <img src={bigLogo} alt="" />
                 <h1>Din beställning är på väg!</h1>
-                <p><span>{sentOrder.eta}</span> minuter</p>
-                <button onClick={() => {navigate('/'); console.log(showNav)}}>Ok, cool!</button>
+                <p><span>{orderStatus.eta}</span> {orderStatus.eta == 1 ? 'minut' : 'minuter'}</p>
+                <button onClick={() => navigate('/')}>Ok, cool!</button>
             </>
             :
             <>
-                <h1>Du har inte lagt någon beställning än!</h1>
+                <h1>Ingen aktiv beställning</h1>
                 <button onClick={() => navigate(-1)}>Okej då</button>
             </>
             }
